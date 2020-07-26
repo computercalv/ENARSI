@@ -1,1 +1,53 @@
+R5
+
 conf t 
+router eigrp 1 
+network 0.0.0.0
+
+int g1/0
+no shut
+ip address 192.168.1.1 255.255.255.0
+
+int l0
+ip address 10.1.0.1 255.255.255.255
+
+int l1
+ip address 10.1.1.1 255.255.255.255
+
+int l2
+ip address 10.1.2.1 255.255.255.255
+
+R3
+en
+
+conf t 
+router eigrp 1 
+network 0.0.0.0
+
+int g1/0
+no shut
+ip address 192.168.1.2 255.255.255.0
+
+int g0/0
+no shut
+ip address 192.168.0.2 255.255.255.0
+
+
+R4
+
+conf t 
+router eigrp 1 
+network 0.0.0.0
+
+int g0/0
+no shut
+ip address 192.168.0.1 255.255.255.0
+
+int l0
+ip address 10.2.0.1 255.255.255.255
+
+int l1
+ip address 10.2.1.1 255.255.255.255
+
+int l2
+ip address 10.2.2.1 255.255.255.255
