@@ -1,1 +1,84 @@
-conf t
+R8
+
+int g0/0
+ip address 192.168.0.1 255.255.255.0
+no shut
+
+int g1/0
+192.168.1.1 255.255.255.0
+no shut 
+
+router eigrp 1
+network 192.168.0.0 0.0.0.255
+no auto
+
+R9 
+
+int g0/0
+ip address 192.168.0.2 255.255.255.0
+no shut
+
+int g1/0
+ip address 192.168.2.1 255.255.255.0
+no shut
+
+router eigrp 1
+network 192.168.0.0 0.0.0.255
+no auto
+
+
+R10
+
+int g1/0
+192.168.1.2 255.255.255.0
+no shut
+
+int g2/0
+ip address 192.168.2.1 255.255.255.0
+no shut
+
+router eigrp 1
+network 192.168.0.0 0.0.0.255
+no auto
+
+R12
+
+int g0/0
+192.168.5.2 255.255.255.0
+no shut
+
+int g2/0
+ip address 192.168.2.2 255.255.255.0
+no shut
+
+router eigrp 1
+network 192.168.0.0 0.0.0.255
+no auto
+
+R11
+
+int g2/0
+ip address 192.168.4.1 255.255.255.0
+no shut
+
+int g1/0
+ip address 192.168.2.2 255.255.255.0
+no shut
+
+router eigrp 1
+network 192.168.0.0 0.0.0.255
+no auto
+
+R13
+
+int g0/0
+192.168.5.1 255.255.255.0
+no shut
+
+int g2/0
+ip address 192.168.4.2 255.255.255.0
+no shut
+
+router eigrp 1
+network 192.168.0.0 0.0.0.255
+no auto
